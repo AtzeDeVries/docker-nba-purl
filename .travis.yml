@@ -3,8 +3,7 @@ language: shell
 services:
   - docker
 
-script:
-  - docker build -t atzedevries/docker-nba-purl:$TRAVIS_BRANCH ./
+script: docker build -t atzedevries/docker-nba-purl:$TRAVIS_BRANCH ./
 
 after_success:
   - docker login -u atzedevries -p $DOCKER_PASS
