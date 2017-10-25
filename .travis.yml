@@ -3,10 +3,10 @@ language: shell
 services:
   - docker
 
-script: docker build -t atzedevries/docker-nba-purl:$TRAVIS_BRANCH ./
+script: docker build -t naturalis/nba-purl:$TRAVIS_BRANCH ./
 
 after_success:
   - docker login -u atzedevries -p $DOCKER_PASS
-  - docker tag atzedevries/docker-nba-purl:$TRAVIS_BRANCH atzedevries/docker-nba-purl:$TRAVIS_BRANCH 
-  - docker push atzedevries/docker-nba-purl:$TRAVIS_BRANCH
+  - docker tag naturalis/nba-purl:$TRAVIS_BRANCH naturalias/nba-purl:$TRAVIS_BRANCH
+  - docker push naturalis/nba-purl:$TRAVIS_BRANCH
   - docker logout
